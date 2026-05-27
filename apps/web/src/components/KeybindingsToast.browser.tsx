@@ -130,6 +130,17 @@ function createBaseServerConfig(): ServerConfig {
           serverPassword: "",
           customModels: [],
         },
+        bob: {
+          enabled: true,
+          binaryPath: "",
+          customModels: [],
+        },
+        kiro: {
+          enabled: true,
+          binaryPath: "",
+          agent: "",
+          customModels: [],
+        },
       },
     },
   };

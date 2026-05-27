@@ -1,12 +1,14 @@
 import {
   ClaudeSettings,
+  BobSettings,
   CodexSettings,
   CursorSettings,
+  KiroSettings,
   OpenCodeSettings,
   ProviderDriverKind,
 } from "@t3tools/contracts";
 import type * as Schema from "effect/Schema";
-import { ClaudeAI, CursorIcon, type Icon, OpenAI, OpenCodeIcon } from "../Icons";
+import { BobIcon, ClaudeAI, CursorIcon, type Icon, KiroIcon, OpenAI, OpenCodeIcon } from "../Icons";
 
 type ProviderSettingsSchema = {
   readonly fields: Readonly<Record<string, Schema.Top>>;
@@ -58,6 +60,20 @@ export const PROVIDER_CLIENT_DEFINITIONS: readonly ProviderClientDefinition[] = 
     label: "OpenCode",
     icon: OpenCodeIcon,
     settingsSchema: OpenCodeSettings,
+  },
+  {
+    value: ProviderDriverKind.make("bob"),
+    label: "Bob",
+    icon: BobIcon,
+    badgeLabel: "CLI",
+    settingsSchema: BobSettings,
+  },
+  {
+    value: ProviderDriverKind.make("kiro"),
+    label: "Kiro",
+    icon: KiroIcon,
+    badgeLabel: "CLI",
+    settingsSchema: KiroSettings,
   },
 ];
 
